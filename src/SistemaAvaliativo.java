@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class SistemaAvaliativo{
-    ArrayList<Estudante> listaDeResultados = new ArrayList<>();
+    private ArrayList<Estudante> listaDeResultados = new ArrayList<>();
     private Integer vagasDisponiveis = 2;
 
     public void inserirEstudante(Estudante e){
@@ -14,9 +14,10 @@ public class SistemaAvaliativo{
         ArrayList<Estudante> alunosAprovados = new ArrayList<>();
 
         this.listaDeResultados.sort(Comparator
-                .comparing(Estudante::somaDasPontuacoes).reversed()
-                .thenComparing(Estudante::getPontuacaoPortugues).reversed()
-                .thenComparing(Estudante::getIdade).reversed());
+                .comparing(Estudante::somaDasPontuacoes)
+                .thenComparing(Estudante::getPontuacaoPortugues)
+                .thenComparing(Estudante::getIdade)
+                .reversed());
 
         for(int i = 0;i <=this.listaDeResultados.size()-1 ; i++){
 
